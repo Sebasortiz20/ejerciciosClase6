@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="f7l-i4-Ebz">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Elige Un Animal-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="PrimerViewController" customModule="ejercicio2Clase6" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="gNK-5E-PTJ">
+                                <rect key="frame" x="39.333333333333343" y="113" width="314.33333333333326" height="180"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="180" id="fDK-kq-bax"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kjf-tj-vXO">
+                                <rect key="frame" x="141.33333333333334" y="345" width="110.33333333333334" height="32"/>
+                                <color key="backgroundColor" red="0.60469183770000001" green="0.5" blue="0.41550691439999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Nuevo Animal">
+                                    <fontDescription key="titleFontDescription" name="DINCondensed-Bold" family="DIN Condensed" pointSize="18"/>
+                                    <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="animalChangeActionButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="GcD-qw-Uuh"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nombre Del Animal" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kfB-Yy-aih">
+                                <rect key="frame" x="39.333333333333343" y="303" width="314.33333333333326" height="22"/>
+                                <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nva-CZ-9zv">
+                                <rect key="frame" x="141.33333333333334" y="387" width="110.33333333333334" height="30"/>
+                                <color key="backgroundColor" red="0.60469183770000001" green="0.5" blue="0.41550691439999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Pasar A Calificar">
+                                    <fontDescription key="titleFontDescription" name="DINCondensed-Bold" family="DIN Condensed" pointSize="16"/>
+                                    <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <segue destination="A8Y-Hw-Kl9" kind="show" id="xf3-PY-tS2"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemGreenColor"/>
+                        <constraints>
+                            <constraint firstItem="kfB-Yy-aih" firstAttribute="top" secondItem="gNK-5E-PTJ" secondAttribute="bottom" constant="10" id="2jl-ma-idg"/>
+                            <constraint firstItem="nva-CZ-9zv" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="4uw-SV-GpX"/>
+                            <constraint firstItem="gNK-5E-PTJ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Rdp-dQ-bMp"/>
+                            <constraint firstItem="nva-CZ-9zv" firstAttribute="top" secondItem="kjf-tj-vXO" secondAttribute="bottom" constant="10" id="X0M-9u-cAR"/>
+                            <constraint firstItem="nva-CZ-9zv" firstAttribute="width" secondItem="kjf-tj-vXO" secondAttribute="width" id="a60-lS-doG"/>
+                            <constraint firstItem="kfB-Yy-aih" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="a7o-ZC-SOq"/>
+                            <constraint firstItem="gNK-5E-PTJ" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="10" id="dNM-Uc-EsN"/>
+                            <constraint firstItem="kjf-tj-vXO" firstAttribute="top" secondItem="kfB-Yy-aih" secondAttribute="bottom" constant="20" id="gje-rz-W1k"/>
+                            <constraint firstItem="kfB-Yy-aih" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.8" id="jt5-TN-kRy"/>
+                            <constraint firstItem="kjf-tj-vXO" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="pSV-ea-A9j"/>
+                            <constraint firstItem="kjf-tj-vXO" firstAttribute="width" secondItem="kfB-Yy-aih" secondAttribute="width" multiplier="0.35" id="prx-R1-gvK"/>
+                            <constraint firstItem="gNK-5E-PTJ" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.8" id="vgg-6Q-Rsq"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Elige Un Animal" id="uYm-N4-SfR"/>
+                    <connections>
+                        <outlet property="animalsImageView" destination="gNK-5E-PTJ" id="ftl-FK-S3z"/>
+                        <outlet property="nameAnimalsLabel" destination="kfB-Yy-aih" id="27R-EK-Te2"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="980.91603053435108" y="-34.507042253521128"/>
+        </scene>
+        <!--Segundo View Controller-->
+        <scene sceneID="ZAt-8w-hLb">
+            <objects>
+                <viewController id="A8Y-Hw-Kl9" customClass="SegundoViewController" customModule="ejercicio2Clase6" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ktA-2l-RsK">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Ingrese Clifiacion De 1 A 5" textAlignment="center" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="yob-e7-3D5">
+                                <rect key="frame" x="59" y="143" width="275" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hzA-WY-xGa">
+                                <rect key="frame" x="148.33333333333334" y="277" width="96.333333333333343" height="35"/>
+                                <color key="backgroundColor" red="0.60469183770000001" green="0.5" blue="0.41550691439999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Calificar">
+                                    <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="accionDelBotonCalificar:" destination="A8Y-Hw-Kl9" eventType="touchUpInside" id="EhS-dz-fZg"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="mFH-mw-si1"/>
+                        <color key="backgroundColor" systemColor="systemGreenColor"/>
+                        <constraints>
+                            <constraint firstItem="hzA-WY-xGa" firstAttribute="top" secondItem="yob-e7-3D5" secondAttribute="bottom" constant="100" id="FQt-H7-ztP"/>
+                            <constraint firstItem="yob-e7-3D5" firstAttribute="width" secondItem="ktA-2l-RsK" secondAttribute="width" multiplier="0.7" id="JrW-dO-VOf"/>
+                            <constraint firstItem="yob-e7-3D5" firstAttribute="top" secondItem="mFH-mw-si1" secondAttribute="top" constant="40" id="Ono-6S-dGM"/>
+                            <constraint firstItem="hzA-WY-xGa" firstAttribute="centerX" secondItem="ktA-2l-RsK" secondAttribute="centerX" id="RuE-tO-U1Y"/>
+                            <constraint firstItem="hzA-WY-xGa" firstAttribute="width" secondItem="yob-e7-3D5" secondAttribute="width" multiplier="0.35" id="fkL-nL-fb2"/>
+                            <constraint firstItem="yob-e7-3D5" firstAttribute="centerX" secondItem="ktA-2l-RsK" secondAttribute="centerX" id="pZI-Ub-3yl"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="N1o-hY-x9I"/>
+                    <connections>
+                        <outlet property="campoDeTextoCalificacion" destination="yob-e7-3D5" id="Blv-Zy-1Qh"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="B1X-7F-3qf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1768.7022900763359" y="-34.507042253521128"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="D2L-c2-8aL">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="f7l-i4-Ebz" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="BGf-jD-MZ2">
+                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="3Vm-0n-Dzu"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="R4t-gU-OZF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="54.198473282442748" y="-34.507042253521128"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemGreenColor">
+            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
