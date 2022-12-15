@@ -9,28 +9,42 @@ import UIKit
 
 class SegundoViewController: UIViewController {
     
+    enum EstadoCampoDeTexto {
+        case campoVacio, campoValido
+    }
     
     @IBOutlet weak var campoDeTextoCalificacion: UITextField!
     @IBOutlet weak var labelAlerta: UILabel!
     
-    var numeroIngresado: Int!
+    var numeroIngresado: String?
+    var resultadoDeValidacion: [EstadoCampoDeTexto] = []
     
     @IBAction func accionDelBotonCalificar(_ sender: Any) {
         extraerDatos()
-        numerosValidos()
+        verificarSiElNumeroIngresadoEsValido()
+        revisarCampoDeTextoVacio()
     }
     
     func extraerDatos() {
-        numeroIngresado = Int(campoDeTextoCalificacion.text ?? "")
+        numeroIngresado = campoDeTextoCalificacion.text ?? ""
     }
     
+    func revisarCampoDeTextoVacio() {
+        if let revisionCampo = numeroIngresado {
+            if revisionCampo.isEmpty {
+                resultadoDeValidacion.append(.campoVacio)
+            } else {
+                resultadoDeValidacion.append(.campoValido)
+            }
+        }
+    }
     
-    func numerosValidos() {
-        switch numeroIngresado!{
-        
+    func verificarSiElNumeroIngresadoEsValido() {
+        let numeroIngresadoInt = Int(numeroIngresado ?? "")
+        switch numeroIngresadoInt ?? 0 {
         case 1...5 :
             cerrarVista()
-        default:
+        default :
             pintarAlerta()
         }
     }

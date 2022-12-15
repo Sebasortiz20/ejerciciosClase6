@@ -22,11 +22,9 @@ class TemperatureConversionViewController: UIViewController {
         static let segueName = "navegarHaciaInicioSeccion"
     }
     
-  
     @IBAction func onLogoutButtonAction(_ sender: UIButton) {
         dismiss(animated: true)
     }
-    
     
     @IBAction func convertToFahrenheitButton(_ sender: UIButton) {
         convertCelsiusToFahrenheit()
@@ -35,7 +33,6 @@ class TemperatureConversionViewController: UIViewController {
     @IBAction func convertToCelciusButton(_ sender: UIButton) {
         convertFahrenheitToCelsius()
     }
-    
     
     func convertCelsiusToFahrenheit() {
         if let celciusTemperature = Double(textFieldCelciusAFahrenheit.text!){

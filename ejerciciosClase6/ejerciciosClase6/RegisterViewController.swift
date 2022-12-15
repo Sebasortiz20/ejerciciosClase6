@@ -10,7 +10,7 @@ import UIKit
 class RegisterViewController: UIViewController {
     
     enum EstadoFormulario {
-        case correoValido, contraseñaValida, confirmacionContraseñaValida, correoVacio, contraseñaVacia, confirmarContraseñaNoCoinside, confirmarContraseñaVacio
+        case correoValido, contraseñaValida, confirmacionContraseñaValida, correoVacio, contraseñaVacia, confirmarContraseñaNoCoinside, confirmarContraseñaVacio, correoYaEstaRegistrado
     }
     
     struct Constant {
@@ -31,10 +31,9 @@ class RegisterViewController: UIViewController {
     @IBOutlet weak var resultLabel: UILabel!
     @IBOutlet weak var outletButtonCrear: UIButton!
     
-    var correo: String!
+    var correo: String?
     var contraseña: String!
     var confirmacionContraseña: String!
-    
     var mensajeDeResultado: String!
     
     var resultadosDeValidacion: [EstadoFormulario] = []
@@ -64,13 +63,17 @@ class RegisterViewController: UIViewController {
     }
     
     func validarCorreo() {
-        if correo.isEmpty {
-            resultadosDeValidacion.append(.correoVacio)
-        } else {
-            resultadosDeValidacion.append(.correoValido)
+        if let correoSeguro = correo {
+            if correoSeguro.isEmpty {
+                resultadosDeValidacion.append(.correoVacio)
+            } else if correo == Constant.correoResgistrado {
+                resultadosDeValidacion.append(.correoYaEstaRegistrado)
+            } else {
+                resultadosDeValidacion.append(.correoValido)
+            }
         }
     }
-
+    
     func validarContraseña() {
         resultadosDeValidacion.append(contraseña.isEmpty ? .contraseñaVacia : .contraseñaValida)
     }
@@ -122,6 +125,18 @@ class RegisterViewController: UIViewController {
             mensajeDeResultado = Constant.diligenciarConfirmacionContraseña
         } else if resultadosDeValidacion.contains([.confirmacionContraseñaValida, .correoVacio, .contraseñaVacia]) {
             mensajeDeResultado = Constant.diligenciarCorreoYContraseña
+        } else if resultadosDeValidacion.contains([.correoYaEstaRegistrado, .confirmacionContraseñaValida, .contraseñaValida]) {
+            mensajeDeResultado = Constant.correoYaExiste
+        } else if resultadosDeValidacion.contains([.correoYaEstaRegistrado, .contraseñaVacia, .confirmarContraseñaVacio]) {
+            mensajeDeResultado = Constant.correoYaExiste
+        } else if resultadosDeValidacion.contains([.correoValido, .contraseñaVacia, .contraseñaVacia]) {
+            mensajeDeResultado = Constant.diligenciarContraseña
+        } else if resultadosDeValidacion.contains([.correoVacio, .contraseñaVacia, .confirmacionContraseñaValida]) {
+            mensajeDeResultado = Constant.diligenciarCorreoYContraseña
+        } else if resultadosDeValidacion.contains([.correoVacio, .contraseñaVacia, .confirmarContraseñaVacio]) {
+            mensajeDeResultado = Constant.diligenciarCamposDeColorRojo
+        } else {
+            mensajeDeResultado = Constant.diligenciarCamposDeColorRojo
         }
     }
     

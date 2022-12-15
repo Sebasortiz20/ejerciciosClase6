@@ -9,7 +9,6 @@ import UIKit
 
 class PrimerViewController: UIViewController {
     
-    
     @IBOutlet weak var animalsImageView: UIImageView!
     @IBOutlet weak var nameAnimalsLabel: UILabel!
     
